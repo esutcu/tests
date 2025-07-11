@@ -1,14 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LocalizationContext } from './contexts/LocalizationContext';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import GamesPage from './pages/GamesPage';
 import ProfilePage from './pages/ProfilePage';
 
 function App() {
-  const { t } = useContext(LocalizationContext);
-
   return (
     <Router>
       <div className="App">
