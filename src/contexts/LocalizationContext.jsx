@@ -9,11 +9,22 @@ export const LocalizationProvider = ({ children }) => {
   useEffect(() => {
     const loadTranslations = async () => {
       try {
-        const response = await fetch(`/src/locales/${locale}.json`);
+        // 使用相对路径确保生产环境正确加载
+        const response = await fetch(`./locales/${locale}.json`);
+        if (!response.ok) {
+          throw new Error('Çeviri dosyası yüklenemedi');
+        }
         const data = await response.json();
         setTranslations(data);
       } catch (error) {
         console.error('Çeviri yüklenemedi:', error);
+        // 回退到默认文本
+        setTranslations({
+          appTitle: 'NAZ Eğitici Oyun',
+          home: 'Ana Sayfa',
+          games: 'Oyunlar',
+          profile: 'Profil'
+        });
       }
     };
 
