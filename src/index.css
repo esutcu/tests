@@ -1,0 +1,63 @@
+:root {
+  --naz-primary: #FF9800; /* Çocuk dostu turuncu */
+  --naz-secondary: #4CAF50; /* Doğa yeşili */
+  --naz-accent: #FF5722; /* Canlı turuncu */
+  --naz-light: #FFFFFF; /* Saf beyaz arka plan */
+  --naz-text: #333333; /* Koyu gri metin */
+  --naz-border: #E0E0E0; /* Açık gri çerçeve */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--naz-light);
+  color: var(--naz-text);
+}
+
+/* Navbar stillerinde mavi kullanımını kaldır */
+.navbar {
+  background-color: var(--naz-primary);
+}
+
+/* Oyun kartlarındaki mavi sınırları kaldır */
+.game-card.math {
+  border-top: 4px solid var(--naz-primary);
+}
+
+/* İlerleme çubuklarındaki maviyi kaldır */
+.progress-bar.math .progress-fill {
+  background-color: var(--naz-primary);
+}
+
+/* Tüm bileşenlerde arka planı beyaz yap */
+.App, .feature-card, .game-card, .profile-info {
+  background-color: var(--naz-light);
+}
+
+/* Çocuk dostu yuvarlak köşeler ve gölgeler */
+.feature-card, .game-card, .profile-info, .navbar {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+/* Game card icon styles */
+.game-icon {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Improve card layout */
+.game-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.game-card h3 {
+  margin: 0.5rem 0;
+}
+
+/* Remove theme borders since we have icons now */
+.game-card.math, .game-card.geography, .game-card.health {
+  border-top: none;
+}
