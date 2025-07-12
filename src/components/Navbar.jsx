@@ -6,6 +6,7 @@ import {
   HiHome,
   HiPuzzlePiece,
   HiUser,
+  HiMusicalNote,
   HiMoon,
   HiSun
 } from 'react-icons/hi2';
@@ -32,6 +33,10 @@ const Navbar = () => {
         <Link to="/games" className="nav-link">
           <HiPuzzlePiece className="nav-icon" />
           <span>Oyunlar</span>
+        </Link>
+        <Link to="/music" className="nav-link">
+          <HiMusicalNote className="nav-icon" />
+          <span>Şarkı Dinle</span>
         </Link>
         <Link to="/profile" className="nav-link">
           <HiUser className="nav-icon" />

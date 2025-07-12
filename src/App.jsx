@@ -5,6 +5,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import GamesPage from './pages/GamesPage';
+import MusicPage from './pages/MusicPage';
 import ProfilePage from './pages/ProfilePage';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/games" element={<GamesPage />} />
+            <Route path="/music" element={<MusicPage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </div>
