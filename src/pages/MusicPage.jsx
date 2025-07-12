@@ -7,8 +7,7 @@ import {
   HiHeart,
   HiForward,
   HiBackward,
-  HiVolumeUp,
-  HiVolumeOff
+  HiSpeakerXMark
 } from 'react-icons/hi2';
 
 const MusicPage = () => {
@@ -248,7 +247,7 @@ const MusicPage = () => {
 
           <div className="volume-control">
             <button className="volume-btn" onClick={toggleMute}>
-              {isMuted ? <HiVolumeOff /> : <HiVolumeUp />}
+              {isMuted ? <HiSpeakerXMark /> : <HiSpeakerWave />}
             </button>
             <input
               type="range"

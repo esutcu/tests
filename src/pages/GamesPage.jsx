@@ -29,10 +29,13 @@ import {
   HiLanguage,
   HiChatBubbleLeft
 } from 'react-icons/hi2';
+import GameModal from '../components/GameModal';
 
 const GamesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [unlockedGames, setUnlockedGames] = useState([1, 4, 7, 10]); // İlk oyunlar açık
+  const [selectedGame, setSelectedGame] = useState(null);
+  const [isGameModalOpen, setIsGameModalOpen] = useState(false);
 
   const games = [
     // Matematik Oyunları
@@ -283,8 +286,13 @@ const GamesPage = () => {
       // Oyun kilitli uyarısı göster
       return;
     }
-    // Oyun başlatma logiki
-    console.log(`${game.title} oyunu başlatılıyor...`);
+    setSelectedGame(game);
+    setIsGameModalOpen(true);
+  };
+
+  const closeGameModal = () => {
+    setIsGameModalOpen(false);
+    setSelectedGame(null);
   };
 
   return (
@@ -1081,6 +1089,12 @@ const GamesPage = () => {
           }
         }
       `}</style>
+
+      <GameModal 
+        game={selectedGame}
+        isOpen={isGameModalOpen}
+        onClose={closeGameModal}
+      />
     </div>
   );
 };
