@@ -1,21 +1,50 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { LocalizationContext } from '../contexts/LocalizationContext';
+import { useTheme } from '../contexts/ThemeContext';
+import { 
+  HiHome,
+  HiPuzzlePiece,
+  HiUser,
+  HiMoon,
+  HiSun
+} from 'react-icons/hi2';
 
 const Navbar = () => {
   const { t } = useContext(LocalizationContext);
+  const { isDarkMode, toggleTheme } = useTheme();
   
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <div className="naz-logo-small">NAZ</div>
-        <h1 className="app-title">{t('appTitle')}</h1>
+        <img 
+          src="/icon-set/icon-192x192.png" 
+          alt="NAZ Logo" 
+          className="navbar-logo"
+        />
+        <h1 className="app-title">Eğitim Krallığı</h1>
       </div>
       <div className="navbar-links">
-        <a href="/" className="nav-link">{t('home')}</a>
-        <a href="/games" className="nav-link">{t('games')}</a>
-        <a href="/profile" className="nav-link">{t('profile')}</a>
+        <Link to="/" className="nav-link">
+          <HiHome className="nav-icon" />
+          <span>Ana Sayfa</span>
+        </Link>
+        <Link to="/games" className="nav-link">
+          <HiPuzzlePiece className="nav-icon" />
+          <span>Oyunlar</span>
+        </Link>
+        <Link to="/profile" className="nav-link">
+          <HiUser className="nav-icon" />
+          <span>Profil</span>
+        </Link>
       </div>
-      <button className="theme-toggle">🌙</button>
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {isDarkMode ? (
+          <HiSun className="theme-icon" />
+        ) : (
+          <HiMoon className="theme-icon" />
+        )}
+      </button>
     </nav>
   );
 };

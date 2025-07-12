@@ -1,25 +1,21 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const LocalizationContext = createContext();
 
 export const LocalizationProvider = ({ children }) => {
   const [locale, setLocale] = useState('tr');
-  const [translations, setTranslations] = useState({});
-
-  useEffect(() => {
-    const loadTranslations = async () => {
-      try {
-        // Göreli yol kullan
-        const response = await fetch('locales/tr.json');
-        const data = await response.json();
-        setTranslations(data);
-      } catch (error) {
-        console.error('Çeviri yüklenemedi:', error);
-      }
-    };
-
-    loadTranslations();
-  }, [locale]);
+  const [translations] = useState({
+    'welcome': 'Hoş Geldiniz',
+    'games': 'Oyunlar',
+    'profile': 'Profil',
+    'home': 'Ana Sayfa',
+    'math': 'Matematik',
+    'geography': 'Coğrafya',
+    'health': 'Sağlık',
+    'loading': 'Yükleniyor...',
+    'play': 'Oyna',
+    'start': 'Başla'
+  });
 
   const t = (key) => {
     return translations[key] || key;
