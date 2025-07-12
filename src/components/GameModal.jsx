@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { HiXMark } from 'react-icons/hi2';
 import EnglishGame from './EnglishGame';
+import MathGame from './MathGame';
+import GeographyGame from './GeographyGame';
+import HealthGame from './HealthGame';
 
 const GameModal = ({ game, isOpen, onClose }) => {
   const [gameCompleted, setGameCompleted] = useState(false);
@@ -35,22 +38,29 @@ const GameModal = ({ game, isOpen, onClose }) => {
         
         {!gameCompleted ? (
           <div className="game-content">
-            {game.theme === 'english' ? (
+            {game.theme === 'english' && (
               <EnglishGame 
                 gameId={game.id} 
                 onComplete={handleGameComplete}
               />
-            ) : (
-              <div className="game-placeholder">
-                <h3>{game.title}</h3>
-                <p>Bu oyun henüz geliştirilme aşamasında...</p>
-                <div className="game-preview">
-                  <div className="game-icon" style={{ color: game.color }}>
-                    {game.icon}
-                  </div>
-                  <p>{game.description}</p>
-                </div>
-              </div>
+            )}
+            {game.theme === 'math' && (
+              <MathGame 
+                gameId={game.id} 
+                onComplete={handleGameComplete}
+              />
+            )}
+            {game.theme === 'geography' && (
+              <GeographyGame 
+                gameId={game.id} 
+                onComplete={handleGameComplete}
+              />
+            )}
+            {game.theme === 'health' && (
+              <HealthGame 
+                gameId={game.id} 
+                onComplete={handleGameComplete}
+              />
             )}
           </div>
         ) : (
