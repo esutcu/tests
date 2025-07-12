@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#4A90E2">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>NAZ Eğitici Oyun Platformu</title>
-  <link rel="manifest" href="/tests/assets/manifest-B-0FrLrr.json">
-  <link rel="icon" href="icon-192x192.png">
-  <script type="module" crossorigin src="/tests/assets/main-QVMsp--i.js"></script>
-  <link rel="stylesheet" crossorigin href="/tests/assets/main-DUYvZtHP.css">
+  <link rel="manifest" href="/assets/manifest-B-0FrLrr.json">
+  <link rel="icon" href="assets/icon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/icon-192x192.png">
+  <meta property="og:title" content="NAZ Eğitici Oyun Platformu">
+  <meta property="og:type" content="website">
+  <script type="module" crossorigin src="/assets/main-YPom-sJU.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-DUYvZtHP.css">
 </head>
 <body>
   <div id="root"></div>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js');
+        navigator.serviceWorker.register('/service-worker.js');
       });
     }
   </script>
