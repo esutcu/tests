@@ -1,24 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import GamesPage from './pages/GamesPage';
 import ProfilePage from './pages/ProfilePage';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/games" element={<GamesPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-          </Routes>
-        </div>
+    <div className="App">
+      <Navbar />
+      <div className="container page">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/games" element={<GamesPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
       </div>
-    </Router>
+    </div>
   );
 }
 

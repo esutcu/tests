@@ -1,63 +1,130 @@
+/* Global Styles */
 :root {
-  --naz-primary: #FF9800; /* Çocuk dostu turuncu */
-  --naz-secondary: #4CAF50; /* Doğa yeşili */
-  --naz-accent: #FF5722; /* Canlı turuncu */
-  --naz-light: #FFFFFF; /* Saf beyaz arka plan */
-  --naz-text: #333333; /* Koyu gri metin */
-  --naz-border: #E0E0E0; /* Açık gri çerçeve */
+  --naz-primary: #ffe6f0;
+  --naz-secondary: #50E3C2;
+  --naz-accent: #F5A623;
+  --naz-dark: #2C3E50;
+  --naz-light: #F8F9FA;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--naz-light);
-  color: var(--naz-text);
+  color: var(--naz-dark);
+  line-height: 1.6;
 }
 
-/* Navbar stillerinde mavi kullanımını kaldır */
-.navbar {
-  background-color: var(--naz-primary);
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Oyun kartlarındaki mavi sınırları kaldır */
-.game-card.math {
-  border-top: 4px solid var(--naz-primary);
-}
-
-/* İlerleme çubuklarındaki maviyi kaldır */
-.progress-bar.math .progress-fill {
-  background-color: var(--naz-primary);
-}
-
-/* Tüm bileşenlerde arka planı beyaz yap */
-.App, .feature-card, .game-card, .profile-info {
-  background-color: var(--naz-light);
-}
-
-/* Çocuk dostu yuvarlak köşeler ve gölgeler */
-.feature-card, .game-card, .profile-info, .navbar {
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-/* Game card icon styles */
-.game-icon {
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-/* Improve card layout */
-.game-card {
+/* Text Alignment */
+.text-center {
   text-align: center;
-  padding: 2rem 1.5rem;
 }
 
-.game-card h3 {
-  margin: 0.5rem 0;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--naz-primary);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* Remove theme borders since we have icons now */
-.game-card.math, .game-card.geography, .game-card.health {
-  border-top: none;
+/* Pages */
+.page {
+  padding: 2rem 0;
 }
+
+/* Cards */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--naz-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #3a7bc8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page {
+    padding: 1rem 0;
+  }
+}
+
+/* Game Cards */
+.game-card {
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Home Page Specific */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.naz-header {
+  background: linear-gradient(135deg, var(--naz-primary), var(--naz-secondary));
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  text-align: center;
+}
+
+/* Add other page-specific styles as needed */
