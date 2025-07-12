@@ -1,14 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
-import { SupabaseProvider } from './contexts/SupabaseContext.jsx';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+import { SupabaseProvider } from './contexts/SupabaseContext';
 import './index.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <SupabaseProvider>
-      <App />
-    </SupabaseProvider>
-  </React.StrictMode>
+    <BrowserRouter basename="/tests">
+      <SupabaseProvider>
+        <App />
+      </SupabaseProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
 );

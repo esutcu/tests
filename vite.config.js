@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: './',
+  base: '/tests/', // GitHub Pages alt dizini için
   plugins: [react()],
   publicDir: 'public',
   build: {
@@ -13,9 +13,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html')
       }
-    },
-    // Tüm statik dosyaları kopyala
-    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.svg', '**/*.json', '**/*.js']
+    }
   },
   server: {
     port: 3000,
