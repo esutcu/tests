@@ -1,0 +1,21 @@
+{
+  "name": "NAZ Eğitici Oyun Platformu",
+  "short_name": "NAZ Oyun",
+  "description": "7-10 yaş çocuklar için eğitici oyunlar",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#4A90E2",
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

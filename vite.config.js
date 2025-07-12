@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 export default defineConfig({
-  base: './', // GitHub Pages için göreli yol
+  base: './',
   plugins: [react()],
   publicDir: 'public',
   build: {
@@ -10,9 +11,11 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       input: {
-        main: './index.html'
+        main: resolve(__dirname, 'index.html')
       }
-    }
+    },
+    // Tüm statik dosyaları kopyala
+    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.svg', '**/*.json', '**/*.js']
   },
   server: {
     port: 3000,
