@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/tests/', // GitHub Pages alt dizini için
+  base: '/', // Cloudflare Workers için kök dizin
   plugins: [react()],
   publicDir: 'public',
   build: {
